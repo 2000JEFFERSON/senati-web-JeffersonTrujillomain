@@ -30,6 +30,7 @@ public class UserService {
         Optional<User> optionalUser = userRepository.findById(id);
         Response response = new Response();
         if (optionalUser.isPresent()){
+            userRepository.deleteById(id);
             response.setCode(200);
             response.setStastus("Succes");
             response.setMeseng("El usuario se elimino correctamente: "+id);

@@ -31,10 +31,7 @@ public class UserController {
     public Response deleteUser(@PathVariable int id){
         return  userService.deleteUser(id);
     }
-    //public ResponseEntity<User> deleteUser(@PathVariable int id) {
-       // userService.deleteUser(id);
-       // return ResponseEntity.noContent().build();
-    //}
+
 
     @PutMapping ("/api/users/{id}")
     public ResponseEntity<User> newUser(@PathVariable int id,@RequestBody User user){
