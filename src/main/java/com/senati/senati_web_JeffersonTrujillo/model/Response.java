@@ -5,7 +5,10 @@ public class Response {
     private int code;
     private String stastus;
     private String meseng;
-
+    public Response(){
+        this.code= 200;
+        this.stastus="success";
+    }
     public int getCode() {
         return code;
     }

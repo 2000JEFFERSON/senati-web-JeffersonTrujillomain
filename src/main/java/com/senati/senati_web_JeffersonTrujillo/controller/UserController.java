@@ -3,6 +3,7 @@ import com.senati.senati_web_JeffersonTrujillo.model.Response;
 import com.senati.senati_web_JeffersonTrujillo.service.UserService;
 import com.senati.senati_web_JeffersonTrujillo.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,8 +29,13 @@ public class UserController {
     }
 
     @DeleteMapping ("/api/users/{id}")
-    public Response deleteUser(@PathVariable int id){
-        return  userService.deleteUser(id);
+    public ResponseEntity<Response> deleteUser(@PathVariable int id) {
+        Response response = userService.deleteUser(id);
+        if (response.getCode() == 200) {
+            return ResponseEntity.ok(response);
+        } else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+        }
     }
 
 
