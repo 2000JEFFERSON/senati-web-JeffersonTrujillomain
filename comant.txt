@@ -1,0 +1,6 @@
+Comandos para agregar el origen:
+    remote add "enlace"-> origin
+    rama->main=principal
+    trae->pull
+    subir->puch
+
