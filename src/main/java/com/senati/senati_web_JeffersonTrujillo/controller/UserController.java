@@ -26,6 +26,7 @@ public class UserController {
     public ResponseEntity<User> newUser(@RequestBody User user){
         return userService.newUser(user);
     }
+
     @DeleteMapping ("/api/users/{id}")
     public Response deleteUser(@PathVariable int id){
         return  userService.deleteUser(id);
