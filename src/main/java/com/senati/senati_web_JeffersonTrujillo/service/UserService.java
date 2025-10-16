@@ -34,7 +34,7 @@ public class UserService {
             response.setMeseng("El usuario se elimino correctamente: "+id);
             return response;
         }
-        response.setCode(400);
+        response.setCode(404);
         response.setStastus("error");
         response.setMeseng("El usuario no se eilimino de manera correcta: "+id);
         return response;

@@ -23,12 +23,12 @@ public class UserController {
         return userService.getAllUsers();
     }
 
-    @PostMapping ("/api/users")
+    @PostMapping ("/api/user")
     public ResponseEntity<User> newUser(@RequestBody User user){
         return userService.newUser(user);
     }
 
-    @DeleteMapping ("/api/users/{id}")
+    @DeleteMapping ("/api/user/{id}")
     public ResponseEntity<Response> deleteUser(@PathVariable int id) {
         Response response = userService.deleteUser(id);
         if (response.getCode() == 200) {
@@ -39,7 +39,7 @@ public class UserController {
     }
 
 
-    @PutMapping ("/api/users/{id}")
+    @PutMapping ("/api/user/{id}")
     public ResponseEntity<User> newUser(@PathVariable int id,@RequestBody User user){
         return userService.updateUser(id, user);
     }
